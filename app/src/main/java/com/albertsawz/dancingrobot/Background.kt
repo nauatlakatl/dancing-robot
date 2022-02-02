@@ -5,6 +5,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.view.View
+import com.albertsawz.dancingrobot.paint.CustomPaint
 import kotlin.math.cos
 import kotlin.math.pow
 import kotlin.math.sin
@@ -17,7 +18,7 @@ class Background(context: Context) : View(context) {
     // Coordinates of a cube after applying transformations on them
     private var drawCubeVertices = ArrayList<Coordinate>()
 
-    private val paint = Paint()
+    private val paint = CustomPaint(Color.MAGENTA)
 
     init {
         cubeVertices.add(Coordinate(-1.0, -1.0, -1.0))
@@ -28,13 +29,6 @@ class Background(context: Context) : View(context) {
         cubeVertices.add(Coordinate(1.0, -1.0, 1.0))
         cubeVertices.add(Coordinate(1.0, 1.0, -1.0))
         cubeVertices.add(Coordinate(1.0, 1.0, 1.0))
-
-        with(paint) {
-            isAntiAlias = true
-            color = Color.RED
-            strokeWidth = 5f
-            style = Paint.Style.STROKE
-        }
 
         drawCubeVertices = translate(cubeVertices, 12.0, 2.0, 2.0)
         drawCubeVertices = scale(drawCubeVertices, 40.0, 40.0, 40.0)
