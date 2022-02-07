@@ -1,6 +1,5 @@
 package com.albertsawz.dancingrobot.paint
 
-import android.graphics.Color
 import android.graphics.Paint
 import androidx.annotation.ColorInt
 
